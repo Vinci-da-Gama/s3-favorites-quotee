@@ -8,7 +8,7 @@ ionic cordova build android
 
 2. cd ./src && mkdir shared -> cd shared && mkdir directives interfaces services
 3. touch rxjsOps.ts
-4. cd ../assets/ && mkdir localData
+4. cd ../../www/ && mkdir localData
 5. npm i -> npm i -S @agm/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
 6. In app.module.ts import HttpModule and HTML_Base_Url (good to go now)
 7. cordova plugin would be later...
