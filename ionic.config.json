@@ -1,0 +1,8 @@
+{
+  "name": "s3-favorites-quotee",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,42 @@
+1. touch tmp.txt and add this file into .gitignore, go terminal 
+ionic cordova platform add android
+ionic cordova platform add ios
+
+ensure you hava gradle --> brew install gradle || scoop install gradle (gradle -v)
+ionic cordova build ios
+ionic cordova build android
+
+2. cd ./src && mkdir shared -> cd shared && mkdir directives interfaces services
+3. touch rxjsOps.ts
+4. cd ../assets/ && mkdir localData
+5. npm i -> npm i -S @agm/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
+6. In app.module.ts import HttpModule and HTML_Base_Url (good to go now)
+7. cordova plugin would be later...
+8. update tslint.json  and tsconfig.json
+tsconfig.json
+
+    "baseUrl": "src",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+
+tslint.json
+    Could not find implementations for the following rules specified in the configuration:
+    directive-selector
+    component-selector
+    use-input-property-decorator
+    use-output-property-decorator
+    use-host-property-decorator
+    no-input-rename
+    no-output-rename
+    use-life-cycle-interface
+    use-pipe-transform-interface
+    component-class-suffix
+    directive-class-suffix
+    no-access-missing-member
+    templates-use-public
+    invoke-injectable
+
+
+git config user.name "Vinci-da-Game"
+git config user.email "11582145@student.uts.edu.au"
