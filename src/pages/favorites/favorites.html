@@ -1,16 +1,26 @@
 <ion-header>
 	<ion-navbar>
+		<ion-buttons start>
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+		</ion-buttons>
 		<ion-title>Favorites-Page</ion-title>
 	</ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
 	<ion-list>
 		<ion-item-sliding #itemWithOpts>
-			<ion-item color="quoteBgColor" *ngFor="let fq of favQuotes" (click)="onViewQuote(fq)">
+			<ion-item color="getBgc()" *ngFor="let fq of favQuotes" (click)="onViewQuote(fq)">
 				<h2>{{fq.person | uppercase}}</h2>
 				<p>{{fq.text}}</p>
 			</ion-item>
+			<!-- <ion-item color="quoteBgColor" *ngFor="let fq of favQuotes" (click)="onViewQuote(fq)">
+				<h2>{{fq.person | uppercase}}</h2>
+				<p>{{fq.text}}</p>
+			</ion-item> -->
 			<ion-item-options>
 				<button ion-button color="danger" (click)="onRemoveFromFavs(fq)">
 					<ion-icon name="trash"></ion-icon>

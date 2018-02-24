@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { FavoritQuoteApp } from './app.component';
 import { QuotesProvider } from '../providers/quotes-provider';
+import { SettingProvider } from '../providers/setting-provider';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { FavoritesPage } from '../pages/favorites/favorites';
@@ -47,7 +48,8 @@ import { SettingsPage } from '../pages/settings/settings';
 		SplashScreen,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
 		{ provide: APP_BASE_HREF, useValue: '/' },
-		QuotesProvider
+		QuotesProvider,
+		SettingProvider
 	]
 })
 export class AppModule { }

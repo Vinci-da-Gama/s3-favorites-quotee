@@ -3,6 +3,7 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { QuoteInterface } from '../../shared/interfaces/quote.interface';
 import { QuotesProvider } from '../../providers/quotes-provider';
 import { QuoteModal } from '../quoteModal/quote-modal';
+import { SettingProvider } from '../../providers/setting-provider';
 
 @Component({
 	selector: 'page-favorites',
@@ -16,7 +17,8 @@ export class FavoritesPage {
 		private navCtrl: NavController,
 		private navParams: NavParams,
 		private qProvider: QuotesProvider,
-		private modalCtrl: ModalController
+		private modalCtrl: ModalController,
+		private sProvider: SettingProvider
 	) { }
 
 	ionViewCanEnter(): boolean | Promise<boolean> {
@@ -58,6 +60,10 @@ export class FavoritesPage {
 		// 2nd reload again.
 		/* this.favQuotes = this.qProvider.getFavQuotes();
 		console.log('56 -- ', this.favQuotes); */
+	}
+
+	getBgc() {
+		return this.sProvider.getAltBgc() ? 'quoteBgColor' : 'altQuoteBgColor';
 	}
 
 }
