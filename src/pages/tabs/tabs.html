@@ -1,0 +1,6 @@
+<ion-content padding>
+	<ion-tabs [selectedIndex]="defaultSelectedPage">
+		<ion-tab tabIcon="star" tabTitle="Favorite" [enabled]="hasFavItems()" [root]="favPage"></ion-tab>
+		<ion-tab tabIcon="book" tabTitle="Library" [root]="libPage"></ion-tab>
+	</ion-tabs>
+</ion-content>

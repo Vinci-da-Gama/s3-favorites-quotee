@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Favorites-Page</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-item-sliding #itemWithOpts>
+			<ion-item color="quoteBgColor" *ngFor="let fq of favQuotes" (click)="onViewQuote(fq)">
+				<h2>{{fq.person | uppercase}}</h2>
+				<p>{{fq.text}}</p>
+			</ion-item>
+			<ion-item-options>
+				<button ion-button color="danger" (click)="onRemoveFromFavs(fq)">
+					<ion-icon name="trash"></ion-icon>
+					Delete Item
+				</button>
+			</ion-item-options>
+
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>

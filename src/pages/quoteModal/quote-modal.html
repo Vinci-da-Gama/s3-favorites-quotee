@@ -1,0 +1,26 @@
+<ion-content padding>
+	<ion-card>
+		<ion-card-header text-ceter>
+			Person: {{person}}
+		</ion-card-header>
+		<ion-card-content>
+			<ion-row>
+				<ion-col>
+					Text: {{text}}
+				</ion-col>
+				<ion-col text-center>
+					<button ion-button small outline color="danger" (click)="UnFavIt()">
+						UnFavorite_It
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+	<ion-row>
+		<ion-col text-center>
+			<button ion-button color="danger" (click)="onClose()">
+				Close-Modal
+			</button>
+		</ion-col>
+	</ion-row>
+</ion-content>

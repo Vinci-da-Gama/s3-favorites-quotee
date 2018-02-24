@@ -7,29 +7,47 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { FavoritQuoteApp } from './app.component';
+import { QuotesProvider } from '../providers/quotes-provider';
+
+import { TabsPage } from '../pages/tabs/tabs';
+import { FavoritesPage } from '../pages/favorites/favorites';
+import { LibraryPage } from '../pages/library/library';
+import { QuotesPage } from '../pages/quotes/quotes';
+import { QuoteModal } from '../pages/quoteModal/quote-modal';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
 	declarations: [
-		MyApp,
-		HomePage
+		FavoritQuoteApp,
+		TabsPage,
+		FavoritesPage,
+		LibraryPage,
+		QuotesPage,
+		QuoteModal,
+		SettingsPage
 	],
 	imports: [
 		BrowserModule,
-		IonicModule.forRoot(MyApp),
+		IonicModule.forRoot(FavoritQuoteApp),
 		HttpModule
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
-		MyApp,
-		HomePage
+		FavoritQuoteApp,
+		TabsPage,
+		FavoritesPage,
+		LibraryPage,
+		QuotesPage,
+		QuoteModal,
+		SettingsPage
 	],
 	providers: [
 		StatusBar,
 		SplashScreen,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
-		{ provide: APP_BASE_HREF, useValue: '/' }
+		{ provide: APP_BASE_HREF, useValue: '/' },
+		QuotesProvider
 	]
 })
 export class AppModule { }
