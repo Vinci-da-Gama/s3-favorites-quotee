@@ -33,7 +33,6 @@ export class FavoritesPage {
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad FavoritesPage');
 	}
 
 	onRemoveFromFavs(fQuote: QuoteInterface) {
@@ -46,24 +45,27 @@ export class FavoritesPage {
 		// to refresh favorite page, you should remove quote from both this page and service.
 		// remove from service.
 		mda.onDidDismiss((removeable: boolean) => {
+			console.log('48 -- removeable: ', removeable);
 			if (removeable) {
+				// remove from this page.
+				// There r 2 ways to refresh favourite quotes
+				// 1st -- it is better, donot need to reload all.
+				const pos = this.qProvider.findQuoteIndex(fQuote);
+				if (pos >= 0) {
+					this.favQuotes.splice(pos, 1);
+				}
+				// 2nd reload again.
+				/* this.favQuotes = this.qProvider.getFavQuotes();
+				console.log('56 -- ', this.favQuotes); */
+
+				// remove this in provider also...
 				this.onRemoveFromFavs(fQuote);
-			} else {
-				return;
 			}
 		})
-		// remove from this page.
-		// There r 2 ways to refresh favourite quotes
-		// 1st -- it is better, donot need to reload all.
-		const pos = this.qProvider.findQuoteIndex(fQuote);
-		this.favQuotes.splice(pos, 1);
-		// 2nd reload again.
-		/* this.favQuotes = this.qProvider.getFavQuotes();
-		console.log('56 -- ', this.favQuotes); */
 	}
 
 	getBgc() {
-		return this.sProvider.getAltBgc() ? 'quoteBgColor' : 'altQuoteBgColor';
+		return this.sProvider.getAltBgc() ? 'altQuoteBgColor' : 'quoteBgColor';
 	}
 
 }

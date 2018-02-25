@@ -22,7 +22,6 @@ export class QuotesPage implements OnInit {
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad QuotePage');
 	}
 
 	isFavourited(quote: QuoteInterface): boolean {
@@ -38,7 +37,6 @@ export class QuotesPage implements OnInit {
 				{
 					text: 'Yep, go ahead.',
 					handler: () => {
-						console.log('OK');
 						this.qProvider.addFavQuote(currQuote);
 					}
 				},

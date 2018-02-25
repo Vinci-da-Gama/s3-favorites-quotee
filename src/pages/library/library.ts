@@ -23,7 +23,6 @@ export class LibraryPage implements OnInit {
 		this.quoteProvider.getLocalQuotes()
 			.then((res: any) => {
 				this.quoteCollection = res.json();
-				console.log('24 -- : ', this.quoteCollection);
 			})
 			.catch((err: any) => {
 				console.log('27 -- error to get data: ', err);

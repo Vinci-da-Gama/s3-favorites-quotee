@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class QuotesProvider {
 
-	private favQuotes: QuoteInterface[] = [];
+	private favouriteQuotes: QuoteInterface[] = [];
 
 	constructor(
 		private http: Http
@@ -36,16 +36,16 @@ export class QuotesProvider {
 	}
 
 	addFavQuote(q: QuoteInterface) {
-		this.favQuotes.push(q);
-		console.log('40 -- fav quotes: ', this.favQuotes);
+		this.favouriteQuotes.push(q);
+		console.log('40 -- fav quotes: ', this.favouriteQuotes);
 	}
 
 	getFavQuotes(): QuoteInterface[] {
-		return this.favQuotes;
+		return this.favouriteQuotes;
 	}
 
 	findQuoteIndex(q: QuoteInterface) {
-		const posIdx = this.favQuotes.findIndex((quoElem: QuoteInterface) => {
+		const posIdx = this.favouriteQuotes.findIndex((quoElem: QuoteInterface) => {
 			return quoElem.id === q.id;
 		});
 		return posIdx;
@@ -53,7 +53,9 @@ export class QuotesProvider {
 
 	removeFavQuote(q: QuoteInterface) {
 		const qIdx = this.findQuoteIndex(q);
-		this.favQuotes.splice(qIdx, 1);
+		console.log('56 -- in provider -- qIdx: ', qIdx);
+		this.favouriteQuotes.splice(qIdx, 1);
+		console.log('57 -- in service -- this.favouriteQuotes: ', this.favouriteQuotes);
 	}
 
 };

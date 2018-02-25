@@ -12,19 +12,15 @@
 
 <ion-content padding>
 	<ion-list>
-		<ion-item-sliding #itemWithOpts>
-			<ion-item color="getBgc()" *ngFor="let fq of favQuotes" (click)="onViewQuote(fq)">
+		<ion-item-sliding #itemWithOpts *ngFor="let fq of favQuotes">
+			<ion-item [color]="getBgc()" (click)="onViewQuote(fq)">
 				<h2>{{fq.person | uppercase}}</h2>
 				<p>{{fq.text}}</p>
 			</ion-item>
-			<!-- <ion-item color="quoteBgColor" *ngFor="let fq of favQuotes" (click)="onViewQuote(fq)">
-				<h2>{{fq.person | uppercase}}</h2>
-				<p>{{fq.text}}</p>
-			</ion-item> -->
 			<ion-item-options>
 				<button ion-button color="danger" (click)="onRemoveFromFavs(fq)">
 					<ion-icon name="trash"></ion-icon>
-					Delete Item
+					Delete
 				</button>
 			</ion-item-options>
 

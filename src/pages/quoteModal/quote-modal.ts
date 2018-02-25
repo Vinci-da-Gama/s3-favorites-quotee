@@ -24,6 +24,7 @@ export class QuoteModal implements OnInit {
 	}
 
 	UnFavIt(removeable: boolean = false) {
+		console.log('27 -- removeable: ', removeable);
 		this.viewCtrl.dismiss(removeable);
 	}
 
