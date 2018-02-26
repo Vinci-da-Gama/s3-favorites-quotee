@@ -64,8 +64,13 @@ export class FavoritesPage {
 		})
 	}
 
-	getBgc() {
+	// method 1 to change bgc
+	/* getBgc() {
 		return this.sProvider.getAltBgc() ? 'altQuoteBgColor' : 'quoteBgColor';
+	} */
+	// scss and ngClass to reset bgc
+	isChangeBgc() {
+		return this.sProvider.getAltBgc();
 	}
 
 }

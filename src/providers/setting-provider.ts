@@ -13,6 +13,7 @@ export class SettingProvider {
 	}
 
 	getAltBgc() {
+		console.log('16 -- this.altBgc: ', this.altBgc);
 		return this.altBgc;
 	}
 

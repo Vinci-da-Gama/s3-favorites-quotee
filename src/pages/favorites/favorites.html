@@ -13,7 +13,11 @@
 <ion-content padding>
 	<ion-list>
 		<ion-item-sliding #itemWithOpts *ngFor="let fq of favQuotes">
-			<ion-item [color]="getBgc()" (click)="onViewQuote(fq)">
+			<ion-item 
+				color="quoteBgColor" 
+				[ngClass]="{alt: isChangeBgc()}"
+				(click)="onViewQuote(fq)"
+			>
 				<h2>{{fq.person | uppercase}}</h2>
 				<p>{{fq.text}}</p>
 			</ion-item>
